@@ -1,0 +1,24 @@
+{
+  "name": "vue2-data-reactive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SK-Runner/Vue2-Data-Reactive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SK-Runner/Vue2-Data-Reactive/issues"
+  },
+  "homepage": "https://github.com/SK-Runner/Vue2-Data-Reactive#readme",
+  "dependencies": {
+    "webpack": "^5.42.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
