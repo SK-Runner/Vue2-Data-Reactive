@@ -3,10 +3,14 @@ import defineReactive from './defineReactive';
 import {
     arrayMethods
 } from './arrayMethods';
+import { Dep } from './Dep';
 import observe from './observe';
 
 export class Observer {
     constructor(value) {
+        // 最后在Observer中添加一个dep属性，值为Dep类的实例
+        this.dep = new Dep()
+
         // 为对象添加一个__ob__的属性，值为实例本身
         // 此处this指向Observer的实例本身
         addProperties(value, '__ob__', this, false);
@@ -22,7 +26,6 @@ export class Observer {
         else {
             this.walk(value);
         }
-
     }
     walk(value) {
         for (let k in value) {

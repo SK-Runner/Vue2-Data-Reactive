@@ -1,19 +1,23 @@
 import observe from './observe'
+import {Watch} from './Watch'
 
 let btn = document.getElementById('btn');
-let obj = {
-    a:{
-        b:{
-            c:1
-        }
+let ming = {
+    prop:{
+        name:'小明',
+        age:18
     },
-    d:{
-        e:2
-    },
-    f:[1,2,3]
+    friends:['Tom','Jack']
 }
-observe(obj)
+observe(ming)
+new Watch(ming,'prop.age',(val)=>{
+    console.log('今天是小明'+val+"的生日，祝福小明");
+
+})
+new Watch(ming,'friends',(val)=>{
+    console.log('小明的朋友有：',val);
+})
 btn.onclick = function(){
-    obj.f.push(4,{g:5})
-    console.log(obj.f[4].g);
+    ming.prop.age++;
+    ming.friends.push('X')
 }

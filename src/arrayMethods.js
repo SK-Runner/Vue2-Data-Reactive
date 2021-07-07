@@ -47,6 +47,9 @@ methods.forEach(methodName => {
             this.__ob__.arrayWalk(inserted)
         }
 
+        // 对于数组属性使用数据的方法，在最后也需要通知更新
+        this.__ob__.dep.notify();
+
         return originResult;
     })
 })
